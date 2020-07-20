@@ -1,6 +1,7 @@
 # Hester_Project2.rb
 # ruby 2.6.6p146 (2020-03-31 revision 67876) [x64-mingw32]
 
+require_relative 'Aes'
 
 class Hester_Project2
 	def initialize
@@ -10,17 +11,14 @@ class Hester_Project2
 
     private def menu
         puts( "\n1:\tAES Encrypt" )
-        puts( "2:\tAES Decrypt" )
-        puts( "3:\tHash" )
+        puts( "2:\tHash" )
         puts( "0:\tExit" )
         response = readline
         case response.chars[0]
         when "1"
-            menu_encrypt
+            aes_encrypt_and_decrypt
         when "2"
-            menu_decrypt
-        when "3"
-            menu_test
+            Aes.new.test
         when "0"
             puts "Goodbye."
         else
@@ -28,13 +26,16 @@ class Hester_Project2
         end
     end
 
-    private def menu_encrypt
-        puts 'encryp'
-        menu
-    end
-
-    private def menu_decrypt
-        puts 'dencryp'
+    private def aes_encrypt_and_decrypt
+        aes = Aes.new
+        print( "\nEnter plain text: " )
+        plain_text = readline
+        puts 'encrypting'
+        cipher = aes.encrypt(plain_text)
+        puts( "Cipher:\t" + cipher )
+        puts 'decrypting'
+        plain_again = aes.decrypt(cipher)
+        puts( "Plain:\t" + plain_again )
         menu
     end
 
