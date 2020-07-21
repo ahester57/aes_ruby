@@ -8,9 +8,9 @@ Analyse AES speeds.
 
 ## File sizes
 
-small:  `bs_small.txt`  - 3 bytes
-medium: `bs_medium.txt` - 3025 bytes
-big:    `bs_big.txt`    - 1205600 bytes = 1.2 MB
+* small:  `bs_small.txt`  - 3 bytes
+* medium: `bs_medium.txt` - 3025 bytes
+* big:    `bs_big.txt`    - 1205600 bytes = 1.2 MB
 
 ----
 
@@ -34,3 +34,9 @@ Numbers are shown in (encrypts and decrypts) per second
 * small:  68790
 * medium: 42778
 * big:    215
+
+----
+
+## How Big of File can we decrypt in 1 second?
+
+
