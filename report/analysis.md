@@ -98,7 +98,7 @@ It was even able to squeeze in an extra one because it finished right under the 
 
 Suppose it were necessary to brute-force the key to break one of your files. How long would it take on your current machine?  
 
-Let's go with medium, because the size of 3 kB seems close to many HTTPS requests.
+Let's go with medium, because the size of 3 kB seems close to many HTTPS requests. _(this file is about 3kB)_
 
 We have: 
 
