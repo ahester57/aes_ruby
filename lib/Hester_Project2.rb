@@ -2,6 +2,7 @@
 # ruby 2.6.6p146 (2020-03-31 revision 67876) [x64-mingw32]
 
 require_relative 'Aes'
+require_relative 'Lorem'
 
 class Hester_Project2
 	def initialize
@@ -11,14 +12,17 @@ class Hester_Project2
 
     private def menu
         puts( "\n1:\tAES Encrypt" )
-        puts( "2:\tHash" )
+        puts( "2:\tGenerate Bullcrap" )
         puts( "0:\tExit" )
         response = readline
         case response.chars[0]
         when "1"
             aes_encrypt_and_decrypt
         when "2"
-            Aes.new.test
+            lorem = Lorem.new
+            p lorem.generate_bullcrap(3)
+            p lorem.generate_bullcrap(300)
+            p lorem.generate_bullcrap(3000) * 100
         when "0"
             puts "Goodbye."
         else

@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    betterlorem (0.1.2)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  betterlorem
+
+BUNDLED WITH
+   1.17.2
