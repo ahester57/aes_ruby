@@ -4,13 +4,14 @@
 require 'openssl'
 
 class Aes
-    def initialize
+    def initialize(key_size)
+        @key_size = key_size
         @key = nil
         @iv = nil
     end
 
     def encrypt(plaintext)
-        cipher = OpenSSL::Cipher::AES.new(128, :CBC)
+        cipher = OpenSSL::Cipher::AES.new(@key_size, :CBC)
         cipher.encrypt
         @key = cipher.random_key
         @iv = cipher.random_iv
@@ -24,7 +25,7 @@ class Aes
             p 'no do decrypt first'
             return
         end
-        decipher = OpenSSL::Cipher::AES.new(128, :CBC)
+        decipher = OpenSSL::Cipher::AES.new(@key_size, :CBC)
         decipher.decrypt
         decipher.key = @key
         decipher.iv = @iv

@@ -1,0 +1,92 @@
+$ ruby lib/Hester_Project2.rb
+
+1:      AES Encrypt
+2:      Generate Bullcrap
+3:      Encrypt/Decrypt Files AES 128-CBC
+4:      Encrypt/Decrypt Files AES 256-CBC
+0:      Exit
+3
+
+How Big
+1:      tiny
+2:      medium
+3:      vv big
+0:      Exit
+1
+{:count=>69428}
+  1.000000   0.000000   1.000000 (  1.000576)
+
+  How Big
+  1:      tiny
+  2:      medium
+  3:      vv big
+  0:      Exit
+  2
+  {:count=>46862}
+    1.000000   0.000000   1.000000 (  1.000546)
+
+    How Big
+    1:      tiny
+    2:      medium
+    3:      vv big
+    0:      Exit
+    3
+    {:count=>257}
+      0.625000   0.375000   1.000000 (  1.003057)
+
+      How Big
+      1:      tiny
+      2:      medium
+      3:      vv big
+      0:      Exit
+      0
+
+      1:      AES Encrypt
+      2:      Generate Bullcrap
+      3:      Encrypt/Decrypt Files AES 128-CBC
+      4:      Encrypt/Decrypt Files AES 256-CBC
+      0:      Exit
+      4
+
+      How Big
+      1:      tiny
+      2:      medium
+      3:      vv big
+      0:      Exit
+      1
+      {:count=>68790}
+        1.000000   0.000000   1.000000 (  1.000316)
+
+        How Big
+        1:      tiny
+        2:      medium
+        3:      vv big
+        0:      Exit
+        2
+        {:count=>42778}
+          0.984000   0.000000   0.984000 (  1.000351)
+
+          How Big
+          1:      tiny
+          2:      medium
+          3:      vv big
+          0:      Exit
+          3
+          {:count=>215}
+            0.687000   0.313000   1.000000 (  1.001217)
+
+            How Big
+            1:      tiny
+            2:      medium
+            3:      vv big
+            0:      Exit
+            0
+
+            1:      AES Encrypt
+            2:      Generate Bullcrap
+            3:      Encrypt/Decrypt Files AES 128-CBC
+            4:      Encrypt/Decrypt Files AES 256-CBC
+            0:      Exit
+            0
+            Goodbye.
+

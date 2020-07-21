@@ -1,6 +1,7 @@
 # Hester_Project2.rb
 # ruby 2.6.6p146 (2020-03-31 revision 67876) [x64-mingw32]
 
+require 'benchmark'
 require_relative 'Aes'
 require_relative 'Lorem'
 
@@ -14,18 +15,21 @@ class Hester_Project2
     private def menu
         puts( "\n1:\tAES Encrypt" )
         puts( "2:\tGenerate Bullcrap" )
-        puts( "3:\tEncrypt/Decrypt Files" )
+        puts( "3:\tEncrypt/Decrypt Files AES 128-CBC" )
+        puts( "4:\tEncrypt/Decrypt Files AES 256-CBC" )
         puts( "0:\tExit" )
         response = readline
         case response.chars[0]
         when "1"
-            aes_encrypt_and_decrypt(Aes.new)
+            aes_encrypt_and_decrypt(Aes.new(128))
         when "2"
             @lorem.make_files
             menu    # i know recursion is bad for menus. T-23 min til due
             return
         when "3"
-            encrypt_decrypt_files(Aes.new)
+            encrypt_decrypt_files(Aes.new(128))
+        when "4"
+            encrypt_decrypt_files(Aes.new(256))
         when "0"
             puts "Goodbye."
         else
@@ -44,12 +48,10 @@ class Hester_Project2
     end
 
     private def encrypt(aes, msg)
-        puts 'encrypting'
         aes.encrypt(msg)
     end
 
     private def decrypt(aes, msg)
-        puts 'decrypting'
         aes.decrypt(msg)
     end
 
@@ -74,10 +76,17 @@ class Hester_Project2
             encrypt_decrypt_files(aes)
             return
         end
-        cipher = encrypt(aes, plain_text)
-        puts( "Cipher:\t" + cipher )
-        plain_again = decrypt(aes, cipher)
-        puts( "Plain:\t" + plain_again )
+        puts Benchmark.measure {
+            count = 0
+            one_second = Time.now + 1
+            loop do
+                cipher = encrypt(aes, plain_text)
+                plain_again = decrypt(aes, cipher)
+                count += 1
+            break if Time.now > one_second
+            end
+            p({:count => count})
+        }
         encrypt_decrypt_files(aes)
     end
 
