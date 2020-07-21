@@ -8,6 +8,8 @@ class Lorem
         @small = "./out/bs_small.txt"
         @medium = "./out/bs_medium.txt"
         @big = "./out/bs_big.txt"
+        @very_medium = "./out/bs_very_medium.txt"
+        @very_big = "./out/bs_very_big.txt"
     end
 
     def make_files
@@ -21,6 +23,10 @@ class Lorem
         File.write(@medium, f2)
         f3 = generate_bullcrap(3000) * 400
         File.write(@big, f3)
+        f4 = generate_bullcrap(3000) * 400 * 225
+        File.write(@very_medium, f4)
+        f5 = generate_bullcrap(3000) * 400 * 300
+        File.write(@very_big, f5)
 
         puts( "Bullcrap written to ./out" )
     end
@@ -41,4 +47,11 @@ class Lorem
         File.read(@big)
     end
 
+    def get_very_medium
+        File.read(@very_medium)
+    end
+
+    def get_very_big
+        File.read(@very_big)
+    end
 end

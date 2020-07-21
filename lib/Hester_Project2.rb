@@ -59,7 +59,9 @@ class Hester_Project2
         puts( "\nHow Big" )
         puts( "1:\ttiny" )
         puts( "2:\tmedium" )
-        puts( "3:\tvv big" )
+        puts( "3:\tbig" )
+        puts( "4:\tvery medium (271 MB)" )
+        puts( "5:\tvery big (363 MB)" )
         puts( "0:\tExit" )
         response = readline
         case response.chars[0]
@@ -69,6 +71,10 @@ class Hester_Project2
             plain_text = @lorem.get_medium
         when "3"
             plain_text = @lorem.get_big
+        when "4"
+            plain_text = @lorem.get_very_medium
+        when "5"
+            plain_text = @lorem.get_very_big
         when "0"
             menu
             return
