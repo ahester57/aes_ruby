@@ -74,7 +74,7 @@ Numbers are shown in (encrypts and decrypts) per second
 3025 B / (1 s / 42778 rounds) = 129 MB 
 
 #### Using big as sample:
-1205600 B / (1 s / 215 rounds) ~= 309 MB
+1205600 B / (1 s / 215 rounds) ~= 259 MB
 
 * very_medium:    `bs_very_medium.txt`    - 271440000 bytes = 271 MB
 
