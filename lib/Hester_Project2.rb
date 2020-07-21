@@ -20,9 +20,7 @@ class Hester_Project2
             aes_encrypt_and_decrypt
         when "2"
             lorem = Lorem.new
-            p lorem.generate_bullcrap(3)
-            p lorem.generate_bullcrap(300)
-            p lorem.generate_bullcrap(3000) * 100
+            lorem.make_files
         when "0"
             puts "Goodbye."
         else
