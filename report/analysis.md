@@ -94,3 +94,41 @@ How Big
 
 It was even able to squeeze in an extra one because it finished right under the 1 second mark.
 
+## Conclusion
+
+Suppose it were necessary to brute-force the key to break one of your files. How long would it take on your current machine?  
+
+Let's go with medium, because the size of 3 kB seems close to many HTTPS requests.
+
+We have: 
+
+* 46862 rounds per second using AES-128-CBC.
+* 42778 rounds per second using AES-256-CBC.
+
+### AES-128-CBC Brute Force of 3025 B file:
+
+* 128 bit key -> 2^128 possible keys
+
+Need to test half of them, on average, for a brute-force: `2^127` keys.
+
+* 2^127 ~= 1.7 * 10^38 keys
+
+* 1.7 * 10^38 keys / 46862 keys/s = 3.6 * 10^33 seconds
+
+Which is about 1.14 × 10^26 years.
+
+No thanks.
+
+### AES-256-CBC Brute Force of 3025 B file:
+
+* 256 bit key -> 2^256 possible keys
+
+Need to test half of them, on average, for a brute-force: `2^255` keys.
+
+* 2^255 ~= 5.8 * 10^76 keys
+
+* 5.8 * 10^76 keys / 42778 keys/s = 1.4 * 10^72 seconds
+
+Which is about 4.4 * 10^64 years.
+
+Definitely not.
