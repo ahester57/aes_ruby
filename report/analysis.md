@@ -32,7 +32,7 @@ Numbers are shown in (encrypts and decrypts) per second
 
 (not even close)
 
-### Using medium as a sample:
+#### Using medium as a sample:
 3025 B / (1 s / 46862 rounds) = 142 MB 
 
 #### Using big as sample:
@@ -70,7 +70,7 @@ Numbers are shown in (encrypts and decrypts) per second
 
 (which we know is bullcrap from our experience with AES-128-CBC)
 
-### Using medium as a sample:
+#### Using medium as a sample:
 3025 B / (1 s / 42778 rounds) = 129 MB 
 
 #### Using big as sample:
