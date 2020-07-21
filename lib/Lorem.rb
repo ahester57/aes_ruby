@@ -36,22 +36,42 @@ class Lorem
     end
 
     def get_small
-        File.read(@small)
+        if (File.file?(@small)) then
+            File.read(@small)
+        else
+            generate_bullcrap(3)
+        end
     end
 
     def get_medium
-        File.read(@medium)
+        if (File.file?(@medium)) then
+            File.read(@medium)
+        else
+            generate_bullcrap(3000)
+        end
     end
 
     def get_big
-        File.read(@big)
+        if (File.file?(@big)) then
+            File.read(@big)
+        else
+            generate_bullcrap(3000)*400
+        end
     end
 
     def get_very_medium
-        File.read(@very_medium)
+        if (File.file?(@very_medium)) then
+            File.read(@very_medium)
+        else
+            generate_bullcrap(3000)*400*225
+        end
     end
 
     def get_very_big
-        File.read(@very_big)
+        if (File.file?(@very_big)) then
+            File.read(@very_big)
+        else
+            generate_bullcrap(3000)*400*300
+        end
     end
 end
